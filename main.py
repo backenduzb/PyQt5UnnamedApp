@@ -1,7 +1,8 @@
 import sys
 
-from PyQt5.QtCore import QSize, Qt
-from PyQt5.QtWidgets import QApplication, QMainWindow, QPushButton
+from PyQt5.QtWidgets import QApplication, QMainWindow
+
+from utils.style import readStyles
 
 
 class MainWindow(QMainWindow):
@@ -9,9 +10,8 @@ class MainWindow(QMainWindow):
         super().__init__()
 
         self.setWindowTitle("QAPP")
+        self.setStyleSheet(readStyles("mainWindow.css"))
 
-        with open("styles/mainWindow.css", "r") as style:
-            self.setStyleSheet(str(style.read()))
 
 app = QApplication(sys.argv)
 
