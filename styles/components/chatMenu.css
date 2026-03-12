@@ -1,8 +1,8 @@
 QListWidget {
     background-color: #000000;
-    border: 1px;
+    border: none;
 }
 
-QListWidgetItem{
-    color: white;
+QListWidgetItem {
+    color: #fffddd;
 }
