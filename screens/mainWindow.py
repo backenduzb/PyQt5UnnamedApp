@@ -1,38 +1,41 @@
 from PyQt5.QtCore import Qt
 from PyQt5.QtWidgets import (
-    QFrame, QLabel, QScrollArea,
-    QSizePolicy, QVBoxLayout,
+    QFrame,
+    QLabel,
+    QScrollArea,
+    QSizePolicy,
+    QVBoxLayout,
     QWidget,
 )
 
 from components.chatMenu import ChatMenu
 from utils.style import readStyles
 
-
 class HomeScreen(QWidget):
     def __init__(self):
         super().__init__()
 
         layout = QVBoxLayout()
-
-        label = QLabel("Welcome")
-        label.setAlignment(Qt.AlignmentFlag.AlignRight)
-        font = label.font()
-        font.setPointSize(14)
-        label.setFont(font)
-        layout.addWidget(label, alignment=Qt.AlignmentFlag.AlignRight)
+        layout.setContentsMargins(0, 0, 0, 0)
+        layout.setSpacing(0)
 
         scroll = QScrollArea()
         scroll.setWidgetResizable(True)
+        scroll.setMinimumWidth(455)
+        scroll.setMinimumHeight(600)
         scroll.setFrameShape(QFrame.Shape.NoFrame)
+        scroll.setLineWidth(0)
+        scroll.setViewportMargins(0, 0, 0, 0)
         
+        scroll.setHorizontalScrollBarPolicy(Qt.ScrollBarPolicy.ScrollBarAlwaysOff)
+        scroll.setVerticalScrollBarPolicy(Qt.ScrollBarPolicy.ScrollBarAlwaysOff)
+        scroll.setSizePolicy(QSizePolicy.Policy.Maximum, QSizePolicy.Policy.Expanding)
+
         chat_menu = ChatMenu()
         scroll.setWidget(chat_menu)
-        scroll.setHorizontalScrollBarPolicy(Qt.ScrollBarPolicy.ScrollBarAlwaysOff)
-        scroll.setSizePolicy(QSizePolicy.Policy.Maximum, QSizePolicy.Policy.Expanding)
-        
-        layout.setContentsMargins(0, 0, 0, 0) 
+
         layout.addWidget(scroll, alignment=Qt.AlignmentFlag.AlignLeft)
 
         self.setLayout(layout)
+        
         self.setStyleSheet(readStyles("screens/homeScreen.css"))
