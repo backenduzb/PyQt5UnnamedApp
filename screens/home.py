@@ -10,8 +10,12 @@ class HomeScreen(QWidget):
         layout = QVBoxLayout()
         layout.setAlignment(Qt.AlignmentFlag.AlignCenter)
 
-        label = QLabel("Undefined name")
+        label = QLabel("Welcome")
         layout.addWidget(label)
-
+        
+        font = label.font()
+        font.setPointSize(30)
+        label.setFont(font)
+        
         self.setLayout(layout)
         self.setStyleSheet(readStyles("screens/homeScreen.css"))
