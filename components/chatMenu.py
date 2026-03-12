@@ -59,6 +59,9 @@ class ChatMenu(QWidget):
             
         layout = QVBoxLayout()
         layout.addWidget(self.chatList)
+        layout.setContentsMargins(0, 0, 0, 0)
+        
         self.setLayout(layout)
         self.setStyleSheet(readStyles("components/chatMenu.css"))
         self.setContentsMargins(0, 0, 0, 0)
+        
