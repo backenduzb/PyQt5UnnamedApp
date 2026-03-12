@@ -1,3 +1,4 @@
+from functools import Placeholder
 from PyQt5.QtCore import QSize, Qt
 from PyQt5.QtGui import QPixmap
 from PyQt5.QtWidgets import (
@@ -6,12 +7,30 @@ from PyQt5.QtWidgets import (
     QListWidget,
     QListWidgetItem,
     QVBoxLayout,
+    QLineEdit,
     QWidget,
 )
 from utils.decorator import circularPixmap
 
 from utils.style import readStyles
 
+class SearchHeader(QWidget):
+    def __init__(self):
+        super().__init__()
+        
+        layout = QVBoxLayout()
+        layout.setContentsMargins(40, 20, 8, 8)
+        
+        search = QLineEdit()
+        search.setFixedHeight(40)
+        search.setPlaceholderText("Search")
+        
+        layout.addWidget(search)
+        self.setMaximumWidth(455)
+        self.setLayout(layout)
+        
+        
+        self.setStyleSheet(readStyles("components/searchHeader.css"))
 
 class ChatItem(QWidget):
     def __init__(self, avatar_path, full_name: str, last_message: str):
@@ -37,7 +56,7 @@ class ChatItem(QWidget):
         main_layout = QHBoxLayout()
         main_layout.addWidget(avatar)
         main_layout.addLayout(text_layout)
-        main_layout.setContentsMargins(5, 5, 5, 5)
+        main_layout.setContentsMargins(10, 5, 5, 5)
         main_layout.setSpacing(0)
         
         self.setLayout(main_layout)
