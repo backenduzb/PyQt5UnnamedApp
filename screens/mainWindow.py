@@ -7,7 +7,9 @@ from PyQt5.QtWidgets import (
     QWidget,
 )
 
-from components.chatMenu import ChatMenu
+from components.chatMenu import (
+    ChatMenu, SearchHeader
+)
 from utils.style import readStyles
 
 
@@ -18,7 +20,10 @@ class HomeScreen(QWidget):
         layout = QVBoxLayout()
         layout.setContentsMargins(0, 0, 0, 0)
         layout.setSpacing(0)
-
+        
+        search_header = SearchHeader()
+        layout.addWidget(search_header, alignment=Qt.AlignmentFlag.AlignTop)
+    
         scroll = QScrollArea()
         scroll.setWidgetResizable(True)
         scroll.setMinimumWidth(455)
