@@ -1,3 +1,10 @@
-QLabel{
+QLabel {
     color: #ffffff;
+}
+
+QScrollArea {
+    background-color: #000000;
+}
+QScrollArea::viewport {
+    background-color: #000000;
 }
