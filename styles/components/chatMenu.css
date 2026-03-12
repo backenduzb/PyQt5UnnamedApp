@@ -6,3 +6,8 @@ QListWidget {
 QListWidgetItem {
     color: #fffddd;
 }
+
+QListWidget::item:selected {
+    background-color: #57595B;
+    color: #ffffff;  
+}

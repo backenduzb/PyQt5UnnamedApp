@@ -31,14 +31,14 @@ class ChatItem(QWidget):
         text_layout = QVBoxLayout()
         text_layout.addWidget(full_name_label)
         text_layout.addWidget(last_message_label)
-        text_layout.setContentsMargins(0, 0, 0, 0)
-        text_layout.setSpacing(2)
+        text_layout.setContentsMargins(8, 8, 8, 8)
+        text_layout.setSpacing(1)
 
         main_layout = QHBoxLayout()
         main_layout.addWidget(avatar)
         main_layout.addLayout(text_layout)
         main_layout.setContentsMargins(5, 5, 5, 5)
-        main_layout.setSpacing(10)
+        main_layout.setSpacing(0)
         
         self.setLayout(main_layout)
         self.setStyleSheet(readStyles("components/chatItem.css"))
