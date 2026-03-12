@@ -1,0 +1,21 @@
+QLabel{
+    color: #ffffff;
+    background-color: transparent;
+}
+
+QLabel#full_name{
+    color: #ffffff;
+    font-size: 16px;
+    font: 500;
+}
+
+QLabel#avatar{
+    border: none;
+    border-radius: 20px;
+}
+
+QLabel#last_message{
+    color: #a9a9a9;
+    font-size: 12px;
+    font: 400;
+}
