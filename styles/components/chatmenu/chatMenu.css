@@ -1,29 +1,46 @@
-QListWidget {
+#chatList {
     background-color: #1b1b1b;
 }
 
-QListWidgetItem {
+#chatList::item {
     color: #fffddd;
 }
 
-QListWidget::item:selected {
+#chatList::item:selected {
     background-color: #4c4c4c;
-    color: #ffffff;  
+    color: #ffffff;
 }
 
-QScrollBar:vertical {
+/* Default holatda scrollbar yashirin */
+#chatList QScrollBar:vertical {
     margin: 5px 0 5px 0;
-    background: #4c4c4c;
+    background: transparent;
+    width: 0px;
+}
+
+/* Hover bo‘lganda chiqadi */
+#chatList:hover QScrollBar:vertical {
     width: 5px;
+    background: #4c4c4c;
     border-radius: 2px;
 }
 
-QScrollBar::handle:vertical {
+#chatList QScrollBar::handle:vertical {
     background: #838383;
     border-radius: 2px;
     min-height: 20px;
 }
-QScrollBar::add-line:vertical, QScrollBar::sub-line:vertical {
+
+#chatList QScrollBar::handle:vertical:hover {
+    background: #a0a0a0;
+}
+
+#chatList QScrollBar::add-line:vertical,
+#chatList QScrollBar::sub-line:vertical {
     height: 0px;
-    background: #484848;
+}
+
+#chatList QScrollBar::add-page:vertical,
+#chatList QScrollBar::sub-page:vertical {
+    background: none;
 }
