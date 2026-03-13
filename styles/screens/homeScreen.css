@@ -1,15 +1,7 @@
+QListWidget {
+    background-color: #000;
+    border: none;
+}
 QScrollArea {
-    background-color: #b0b0b0;
     border: none;
 }
-
-QScrollArea QWidget {
-    background-color: #b0b0b0;
-    border: none;
-}
-
-QScrollArea::viewport {
-    background-color: #a0a0a0;
-    border: none;
-}
-
