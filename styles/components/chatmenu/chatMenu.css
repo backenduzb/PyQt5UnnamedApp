@@ -11,14 +11,12 @@
     color: #ffffff;
 }
 
-/* Default holatda scrollbar yashirin */
 #chatList QScrollBar:vertical {
     margin: 5px 0 5px 0;
     background: transparent;
     width: 0px;
 }
 
-/* Hover bo‘lganda chiqadi */
 #chatList:hover QScrollBar:vertical {
     width: 5px;
     background: #4c4c4c;
