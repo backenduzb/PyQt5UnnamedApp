@@ -1,4 +1,4 @@
-from PyQt5.QtCore import QEvent, Qt
+from PyQt5.QtCore import Qt
 from PyQt5.QtWidgets import QLabel
 
 
@@ -23,7 +23,7 @@ def filterChats(self, text):
 
 
 def handle_alt_navigation(chat_menu, event):
-    if event.modifiers() & Qt.AltModifier and event.key() in (Qt.Key_Up, Qt.Key_Down):
+    if event.modifiers() & Qt.KeyboardModifier.AltModifier and event.key() in (Qt.Key.Key_Up, Qt.Key.Key_Down):
         count = chat_menu.chatList.count()
         if count == 0:
             return False
@@ -32,7 +32,7 @@ def handle_alt_navigation(chat_menu, event):
         if current_row < 0:
             current_row = 0
 
-        if event.key() == Qt.Key_Up:
+        if event.key() == Qt.Key.Key_Up:
             target = max(0, current_row - 1)
         else:
             target = min(count - 1, current_row + 1)
