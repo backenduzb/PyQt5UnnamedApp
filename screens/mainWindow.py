@@ -1,14 +1,7 @@
 from PyQt5.QtCore import Qt
-from PyQt5.QtWidgets import (
-    QVBoxLayout,
-    QWidget,
-)
-from components.scrollArea import (
-    SmoothScrollArea
-)
-from components.chatMenu import (
-    ChatMenu, SearchHeader
-)
+from PyQt5.QtWidgets import QVBoxLayout, QWidget
+
+from components.chatMenu import ChatMenu
 from utils.style import readStyles
 
 
@@ -17,30 +10,13 @@ class HomeScreen(QWidget):
         super().__init__()
 
         layout = QVBoxLayout()
-        
+
         layout.setContentsMargins(0, 0, 0, 0)
         layout.setSpacing(0)
-        
-        search_header = SearchHeader()
-        search_header.setContentsMargins(10, 10, 10, 10)
-        layout.addWidget(search_header, alignment=Qt.AlignmentFlag.AlignTop)
 
-        scroll = SmoothScrollArea()
-        scroll.setWidgetResizable(True)
-        scroll.setMinimumWidth(455)
-        scroll.setMinimumHeight(600)
-        scroll.setMaximumWidth(800)
-        scroll.setWidgetResizable(True)
-        scroll.setLineWidth(0)
-        scroll.setContentsMargins(0, 0, 0, 0)
-        scroll.viewport().setContentsMargins(0, 0, 0, 0)
-        
         chat_menu = ChatMenu()
-        scroll.setWidget(chat_menu)
-        chat_menu.setContentsMargins(0, 0, 0, 0)
-        chat_menu.setMaximumWidth(800)
-        layout.addWidget(scroll, alignment=Qt.AlignmentFlag.AlignLeft)
-        layout.setContentsMargins(0, 0, 0, 0)
+        chat_menu.setMinimumWidth(455)
+        layout.addWidget(chat_menu, alignment=Qt.AlignmentFlag.AlignLeft)
         
         self.setContentsMargins(0, 0, 0, 0)
         self.setLayout(layout)
