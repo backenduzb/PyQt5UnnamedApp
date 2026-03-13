@@ -1,7 +1,4 @@
-from functools import Placeholder
-
 from PyQt5.QtCore import QSize, Qt
-from PyQt5.QtGui import QPixmap
 from PyQt5.QtWidgets import (
     QAbstractItemView,
     QHBoxLayout,
@@ -32,6 +29,8 @@ class SearchHeader(QWidget):
         self.setMaximumWidth(455)
         self.setLayout(layout)
 
+        self.setObjectName("main")
+        self.setAttribute(Qt.WidgetAttribute.WA_StyledBackground, True)
         self.setStyleSheet(readStyles("components/searchHeader.css"))
 
 
