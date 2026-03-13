@@ -1,36 +1,39 @@
 from functools import Placeholder
+
 from PyQt5.QtCore import QSize, Qt
 from PyQt5.QtGui import QPixmap
 from PyQt5.QtWidgets import (
+    QAbstractItemView,
     QHBoxLayout,
     QLabel,
+    QLineEdit,
     QListWidget,
     QListWidgetItem,
     QVBoxLayout,
-    QLineEdit,
     QWidget,
 )
-from utils.decorator import circularPixmap
 
+from utils.decorator import circularPixmap
 from utils.style import readStyles
+
 
 class SearchHeader(QWidget):
     def __init__(self):
         super().__init__()
-        
+
         layout = QVBoxLayout()
         layout.setContentsMargins(40, 20, 8, 8)
-        
+
         search = QLineEdit()
         search.setFixedHeight(40)
         search.setPlaceholderText("Search")
-        
+
         layout.addWidget(search)
         self.setMaximumWidth(455)
         self.setLayout(layout)
-        
-        
+
         self.setStyleSheet(readStyles("components/searchHeader.css"))
+
 
 class ChatItem(QWidget):
     def __init__(self, avatar_path, full_name: str, last_message: str):
@@ -45,8 +48,7 @@ class ChatItem(QWidget):
         full_name_label.setObjectName("full_name")
         last_message_label = QLabel(last_message)
         last_message_label.setObjectName("last_message")
-        
-        
+
         text_layout = QVBoxLayout()
         text_layout.addWidget(full_name_label)
         text_layout.addWidget(last_message_label)
@@ -58,7 +60,7 @@ class ChatItem(QWidget):
         main_layout.addLayout(text_layout)
         main_layout.setContentsMargins(10, 5, 5, 5)
         main_layout.setSpacing(0)
-        
+
         self.setLayout(main_layout)
         self.setStyleSheet(readStyles("components/chatItem.css"))
 
@@ -68,19 +70,23 @@ class ChatMenu(QWidget):
         super().__init__()
 
         self.chatList = QListWidget()
+        self.chatList.setVerticalScrollMode(QAbstractItemView.ScrollPerPixel)
+        self.chatList.setHorizontalScrollMode(QAbstractItemView.ScrollPerPixel)
+        self.chatList.verticalScrollBar().setSingleStep(8)
 
         for i in range(200):
             chat = QListWidgetItem()
-            widget = ChatItem("assets/profile.jpg", "Michael Kaiser", "こんいちわ！　どぞ　よろしく")
+            widget = ChatItem(
+                "assets/profile.jpg", "Michael Kaiser", "こんいちわ！　どぞ　よろしく"
+            )
             chat.setSizeHint(widget.sizeHint())
             self.chatList.addItem(chat)
             self.chatList.setItemWidget(chat, widget)
-            
+
         layout = QVBoxLayout()
         layout.addWidget(self.chatList)
         layout.setContentsMargins(0, 0, 0, 0)
-        
+
         self.setLayout(layout)
         self.setStyleSheet(readStyles("components/chatMenu.css"))
         self.setContentsMargins(0, 0, 0, 0)
-        

@@ -1,34 +1,20 @@
-from PyQt5.QtCore import QEasingCurve, QPropertyAnimation, Qt, QTimer
-from PyQt5.QtWidgets import QApplication, QPushButton, QScrollArea, QVBoxLayout, QWidget
+from PyQt5.QtWidgets import QScrollArea
 
 
 class SmoothScrollArea(QScrollArea):
     def __init__(self, parent=None):
         super().__init__(parent)
-        self.setFrameShape(QScrollArea.NoFrame)
 
-        self.ani = QPropertyAnimation(self.verticalScrollBar(), b"value")
-        self.ani.setEasingCurve(QEasingCurve.OutQuart)
-        self.ani.setDuration(600)
-
-        self.target_value = 0
+        self.verticalScrollBar().setSingleStep(1)
+        self.verticalScrollBar().setPageStep(1)
 
     def wheelEvent(self, event):
-        delta = event.angleDelta().y()
 
-        step = delta * 2
+        pixel_delta = event.pixelDelta().y()
 
-        if self.ani.state() == QPropertyAnimation.Running:
-            new_target = self.target_value - step
-        else:
-            new_target = self.verticalScrollBar().value() - step
+        if pixel_delta == 0:
+            pixel_delta = event.angleDelta().y() / 120
 
-        self.target_value = max(
-            self.verticalScrollBar().minimum(),
-            min(new_target, self.verticalScrollBar().maximum()),
-        )
+        scroll_value = self.verticalScrollBar().value() - pixel_delta
 
-        self.ani.stop()
-        self.ani.setStartValue(self.verticalScrollBar().value())
-        self.ani.setEndValue(self.target_value)
-        self.ani.start()
+        self.verticalScrollBar().setValue(int(scroll_value))
