@@ -23,4 +23,5 @@ class ChatArea(QWidget):
 
         self.setLayout(layout)
         self.setSizePolicy(QSizePolicy.Expanding, QSizePolicy.Expanding)
-        self.setStyleSheet(readStyles("components/chatarea/sendPanel.css"))
+        self.setObjectName("main")
+        self.setStyleSheet(readStyles("components/chatarea/chatArea.css"))

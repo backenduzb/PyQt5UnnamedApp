@@ -21,4 +21,4 @@ class SendPanel(QWidget):
 
         self.setLayout(layout)
         self.setSizePolicy(QSizePolicy.Expanding, QSizePolicy.Fixed)
-        self.setStyleSheet(readStyles("components/chatarea/titlePanel.css"))
+        self.setStyleSheet(readStyles("components/chatarea/sendPanel.css"))        
