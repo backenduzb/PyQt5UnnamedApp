@@ -1,7 +1,7 @@
 from PyQt5.QtCore import Qt
 from PyQt5.QtWidgets import QVBoxLayout, QWidget
 
-from components.chatMenu import ChatMenu
+from components.chatmenu import ChatMenu
 from utils.style import readStyles
 
 

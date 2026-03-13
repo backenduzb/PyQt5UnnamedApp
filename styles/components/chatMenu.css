@@ -1,6 +1,5 @@
 QListWidget {
     background-color: #1b1b1b;
-    border-right: 1px solid #000;
 }
 
 QListWidgetItem {
@@ -13,7 +12,7 @@ QListWidget::item:selected {
 }
 
 QScrollBar:vertical {
-    margin: 20px 0 20px 0;
+    margin: 5px 0 5px 0;
     background: #4c4c4c;
     width: 5px;
     border-radius: 2px;
