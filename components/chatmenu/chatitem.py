@@ -36,4 +36,4 @@ class ChatItem(QWidget):
         main_layout.setSpacing(0)
 
         self.setLayout(main_layout)
-        self.setStyleSheet(readStyles("components/chatItem.css"))
+        self.setStyleSheet(readStyles("components/chatmenu/chatItem.css"))

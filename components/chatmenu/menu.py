@@ -49,7 +49,7 @@ class ChatMenu(QWidget):
         layout.addWidget(self.noChatsLabel)
 
         self.setLayout(layout)
-        self.setStyleSheet(readStyles("components/chatMenu.css"))
+        self.setStyleSheet(readStyles("components/chatmenu/chatMenu.css"))
         self.setContentsMargins(0, 0, 0, 0)
         self.chatList.installEventFilter(self)
         self.searchHeader.search.textChanged.connect(
