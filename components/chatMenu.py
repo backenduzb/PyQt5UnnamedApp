@@ -69,7 +69,7 @@ class ChatMenu(QWidget):
 
         self.chatList = QListWidget()
 
-        for i in range(2):
+        for i in range(200):
             chat = QListWidgetItem()
             widget = ChatItem("assets/profile.jpg", "Michael Kaiser", "こんいちわ！　どぞ　よろしく")
             chat.setSizeHint(widget.sizeHint())

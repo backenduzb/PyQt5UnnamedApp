@@ -4,4 +4,3 @@ def readStyles(file_path) -> str:
             return style.read()
     except Exception as e:
         raise e
-        

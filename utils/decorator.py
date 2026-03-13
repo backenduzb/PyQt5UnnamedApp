@@ -1,15 +1,20 @@
-from PyQt5.QtGui import QPixmap, QPainter, QBrush, QPen
 from PyQt5.QtCore import Qt
+from PyQt5.QtGui import QBrush, QPainter, QPixmap
 
 
 def circularPixmap(path, size):
-    pixmap = QPixmap(path).scaled(size, size, Qt.KeepAspectRatioByExpanding, Qt.SmoothTransformation)
-    
+    pixmap = QPixmap(path).scaled(
+        size,
+        size,
+        Qt.AspectRatioMode.KeepAspectRatioByExpanding,
+        Qt.TransformationMode.SmoothTransformation,
+    )
+
     result = QPixmap(size, size)
     result.fill(Qt.GlobalColor.transparent)
 
     painter = QPainter(result)
-    painter.setRenderHint(QPainter.Antialiasing) 
+    painter.setRenderHint(QPainter.Antialiasing)
     painter.setRenderHint(QPainter.SmoothPixmapTransform)
 
     brush = QBrush(pixmap)
