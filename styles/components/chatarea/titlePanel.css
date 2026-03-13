@@ -13,18 +13,3 @@ QWidget#main {
     background-color: #1b1b1b;
     border: 0.5px solid #111111;
 }
-
-QLineEdit {
-    background-color: #333333;
-    color: #ffffff;
-    border-radius: 20px;
-    padding: 10px 20px;
-    font-size: 14px;
-    border: none;
-    font: 500;
-}
-
-QLineEdit::placeholder {
-    color: #5a5a5a;
-    font-style: italic;
-}

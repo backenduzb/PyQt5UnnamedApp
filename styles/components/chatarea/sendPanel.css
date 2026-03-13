@@ -1,0 +1,13 @@
+QLineEdit {
+    background-color: #1b1b1b;
+    color: #ffffff;
+    padding: 10px 20px;
+    font-size: 14px;
+    border: none;
+    font: 500;
+}
+
+QLineEdit::placeholder {
+    color: #5a5a5a;
+    font-style: italic;
+}

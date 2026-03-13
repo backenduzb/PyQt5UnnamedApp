@@ -1,5 +1,7 @@
 from PyQt5.QtWidgets import QSizePolicy, QVBoxLayout, QWidget
 
+from utils.style import readStyles
+
 from .sendpanel import SendPanel
 from .titlepanel import TitlePanel
 
@@ -21,3 +23,4 @@ class ChatArea(QWidget):
 
         self.setLayout(layout)
         self.setSizePolicy(QSizePolicy.Expanding, QSizePolicy.Expanding)
+        self.setStyleSheet(readStyles("components/chatarea/sendPanel.css"))
