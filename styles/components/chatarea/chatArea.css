@@ -1,3 +1,16 @@
-QListWidget {
-    background-color: #fff;
+#chatArea {
+    background-color: #000;
+    border-top: 1px solid #111111;
+    border-bottom: 1px solid #111111;
+}
+
+#chatArea::item {
+    color: #fff;
+    border: none;
+}
+
+#chatArea::item:selected {
+    background-color: #000;
+    border: none;
+    color: #fff;
 }

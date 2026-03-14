@@ -13,7 +13,7 @@ class ChatComponent(QWidget):
         title_panel = TitlePanel()
         send_panel = SendPanel()
         chat_area = ChatArea()
-
+        
         layout = QVBoxLayout()
         layout.setContentsMargins(0, 0, 0, 0)
         layout.setSpacing(0)

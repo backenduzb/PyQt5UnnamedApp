@@ -1,4 +1,4 @@
-from PyQt5.QtWidgets import QWidget, QHBoxLayout, QListWidget, QListWidgetItem
+from PyQt5.QtWidgets import QWidget, QHBoxLayout, QListWidget, QListWidgetItem, QAbstractItemView
 from utils.style import readStyles
 
 class ChatArea(QWidget):
@@ -8,7 +8,8 @@ class ChatArea(QWidget):
         self.chatList = QListWidget()
         self.chatList.setObjectName("chatArea")
         self.chatList.setContentsMargins(0, 0, 0, 0)
-        
+        self.chatList.setEnabled(False)
+        self.chatList.setSelectionMode(QAbstractItemView.NoSelection)
         for i in range(20):
             item = QListWidgetItem("Salom")
             self.chatList.addItem(item)
