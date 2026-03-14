@@ -23,7 +23,6 @@ class ChatMenu(QWidget):
 
         self.chatList = QListWidget()
         self.chatList.setVerticalScrollMode(QAbstractItemView.ScrollPerPixel)
-        self.chatList.setHorizontalScrollMode(QAbstractItemView.ScrollPerPixel)
         self.chatList.verticalScrollBar().setSingleStep(8)
         
         self.chatList.setObjectName("chatList")
@@ -60,7 +59,8 @@ class ChatMenu(QWidget):
         layout.addWidget(self.chatList)
         layout.addWidget(self.noChatsLabel)
         layout.setContentsMargins(0, 0, 0, 0)
-
+        layout.setSpacing(0)
+        
         self.setLayout(layout)
         self.setStyleSheet(readStyles("components/chatmenu/chatMenu.css"))
         self.chatList.installEventFilter(self)

@@ -26,3 +26,4 @@ class SearchHeader(QWidget):
         self.setObjectName("main")
         self.setAttribute(Qt.WidgetAttribute.WA_StyledBackground, True)
         self.setStyleSheet(readStyles("components/chatmenu/searchHeader.css"))
+        self.setContentsMargins(0, 0, 0, 0)
