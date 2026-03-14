@@ -1,1 +1,23 @@
-    
+QLabel#message-text {
+    font-size: 15px;
+    border-radius: 20px;
+    padding: 10px 10px 10px 10px;
+    border-bottom-right-radius: 0;
+    margin: 5px 10px 5px 20px;  
+    background-color: #1b1b1b;  
+    color: #fff;
+    qproperty-wordWrap: true;    
+    qproperty-alignment: AlignLeft;
+}
+
+QLabel#message-text-other {
+    font-size: 15px;
+    border-radius: 20px;
+    padding: 10px 10px 10px 10px;
+    border-bottom-left-radius: 0;
+    margin: 5px 20px 5px 10px;   
+    background-color: #2b2b2b;  
+    color: #fff;
+    qproperty-wordWrap: true;
+    qproperty-alignment: AlignLeft;
+}

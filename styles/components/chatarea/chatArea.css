@@ -1,6 +1,7 @@
 #chatArea {
     background-color: #000;
     border-top: 1px solid #111111;
+    color: #fff;
     border-bottom: 1px solid #111111;
 }
 
@@ -13,4 +14,36 @@
     background-color: #000;
     border: none;
     color: #fff;
+}
+
+#chatArea QScrollBar:vertical {
+    margin: 5px 0 5px 0;
+    background: transparent;
+    width: 0px;
+}
+
+#chatArea:hover QScrollBar:vertical {
+    width: 5px;
+    background: #4c4c4c;
+    border-radius: 2px;
+}
+
+#chatArea QScrollBar::handle:vertical {
+    background: #838383;
+    border-radius: 2px;
+    min-height: 20px;
+}
+
+#chatArea QScrollBar::handle:vertical:hover {
+    background: #a0a0a0;
+}
+
+#chatArea QScrollBar::add-line:vertical,
+#chatArea QScrollBar::sub-line:vertical {
+    height: 0px;
+}
+
+#chatArea QScrollBar::add-page:vertical,
+#chatArea QScrollBar::sub-page:vertical {
+    background: none;
 }
