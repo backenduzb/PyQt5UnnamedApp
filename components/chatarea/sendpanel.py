@@ -15,6 +15,7 @@ class SendPanel(QWidget):
 
         message.setSizePolicy(QSizePolicy.Expanding, QSizePolicy.Fixed)
         message.setMinimumWidth(0)
+        message.setMinimumHeight(60)
 
         layout.setContentsMargins(0, 0, 0, 0)
         layout.addWidget(message, 1)
