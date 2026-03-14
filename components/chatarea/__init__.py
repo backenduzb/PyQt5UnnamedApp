@@ -1,1 +1,1 @@
-from .area import ChatArea
+from .component import ChatComponent

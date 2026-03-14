@@ -1,5 +1,6 @@
 #chatList {
     background-color: #1b1b1b;
+    border-right: 1px solid #111111;
 }
 
 #chatList::item {

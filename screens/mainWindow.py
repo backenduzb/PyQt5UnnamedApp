@@ -1,7 +1,6 @@
-from PyQt5.QtCore import Qt
 from PyQt5.QtWidgets import QHBoxLayout, QSizePolicy, QWidget
 
-from components.chatarea import ChatArea
+from components.chatarea import ChatComponent
 from components.chatmenu import ChatMenu
 from utils.style import readStyles
 
@@ -19,7 +18,7 @@ class HomeScreen(QWidget):
         chat_menu.setFixedWidth(455)
         chat_menu.setMinimumHeight(600)
 
-        chat_area = ChatArea()
+        chat_area = ChatComponent()
         chat_area.setMinimumHeight(600)
         chat_area.setSizePolicy(QSizePolicy.Expanding, QSizePolicy.Expanding)
 
